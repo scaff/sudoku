@@ -7,7 +7,11 @@ class Cellule:
         self.valeur = valeur
         self.grille = grille
 
-    # def is_valeur_valide(valeur):
+    def is_valeur_valide(self, valeur):
+        to_return = self.is_colonne_valide(valeur) and self.is_ligne_valide(valeur) and self.is_block_valide(valeur)
+        print(to_return)
+        return to_return
+    
     def is_colonne_valide(self, valeur):
         for ligne in self.grille.model:
             if ligne[self.x].valeur == valeur:
